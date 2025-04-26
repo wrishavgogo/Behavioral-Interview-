@@ -17,6 +17,8 @@ General Behavioral Questions
 9.	How do you prioritize and manage multiple tasks or projects? Provide an example of a time when you successfully juggled several tasks at once.
 10.	Tell me about a time you had to manage a critical project under tight deadlines. How did you ensure completion on time?
 11.	How do you handle situations where work assigned to you keeps getting de-prioritized and changed repeatedly? How would you feel about it?
+
+
 Project and Ambiguity Questions
 
 1.	Tell me about a time when you faced ambiguity in the requirements of a project.
@@ -24,6 +26,8 @@ Project and Ambiguity Questions
 3.	How would you handle people who disagree with the majority decision on a non-work-related matter?
 4.	Tell me about a time you had to deal with last-minute changes in a project.
 5.	How would you prioritize tasks when facing multiple critical deadlines?
+
+
 Technical and Role-Related Questions
 
 1.	Imagine you’re part of the Google Photos team, and your feature detects smiling faces in photos. How will you identify false positives and what actions will you take?
@@ -33,6 +37,8 @@ Technical and Role-Related Questions
 5.	Describe a time when you encountered a significant bug or issue in production. How did you handle it?
 6.	Explain a situation where you misunderstood project requirements. How did you rectify it, and what did you learn?
 7.	Give an example of a time you had to quickly learn a new technology or tool. How did you approach it, and what was the outcome?
+
+
 Mentoring and Leadership Questions
 
 1.	Tell me about a time you advocated for yourself or someone on your team.
@@ -40,6 +46,7 @@ Mentoring and Leadership Questions
 3.	How do you mentor junior team members? Can you share a successful mentoring experience?
 4.	What challenges have you faced when mentoring junior colleagues?
 5.	What would you do if a junior team member was not working properly and delaying tasks?
+
 Team Dynamics and Conflict Resolution Questions
 
 1.	Describe a time when you had to work with someone outside your team.
@@ -49,6 +56,8 @@ Team Dynamics and Conflict Resolution Questions
 5.	Tell me about a situation where you proposed an idea, but your team disagreed. How did you handle it?
 6.	Have you worked with cross-team members? Can you describe your experience and how it went?
 7.	Describe a time when you handled a colleague who was difficult to work with.
+
+
 Goal Setting and Manager Expectations
 
 1.	What is your idea of a perfect manager? Would you be the type of manager you described?
@@ -56,6 +65,8 @@ Goal Setting and Manager Expectations
 3.	Tell me about a situation where you learned something valuable from a colleague.
 4.	Tell me about a time when your work was deprioritized mid-way through a project. How did you handle the situation?
 5.	What generally excites you? What areas of work would you like to explore?
+
+
 Client, Deadline, and Process Improvement Questions
 
 1.	What would you do if you were going to miss a project deadline?
@@ -63,6 +74,8 @@ Client, Deadline, and Process Improvement Questions
 3.	Describe a scenario where you improved a process or system within your team. What impact did it have?
 4.	Imagine working on a project with a strict deadline. How would you approach the situation?
 5.	What is the most challenging project you’ve worked on?
+
+
 Miscellaneous and Life Experience Questions
 
 1.	Describe a time when you solved a customer pain point.
