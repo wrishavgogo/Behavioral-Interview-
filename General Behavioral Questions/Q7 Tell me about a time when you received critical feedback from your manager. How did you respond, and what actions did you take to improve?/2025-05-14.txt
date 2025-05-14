@@ -1,0 +1,31 @@
+Yuvi telling not active during on calls : 
+
+
+Situation: During my initial months in my previous team, my director gave me a piece of honest and
+critical feedback. He pointed out that during on-call support, I wasn’t as visibly active as some
+of my teammates. While others were seen jumping in and troubleshooting issues quickly, it appeared
+that I was less involved, which impacted how my contributions were being perceived.
+
+Task: I realized that although I was working behind the scenes—debugging logs and diving deep into
+code—I wasn’t communicating enough or surfacing my efforts during these high-pressure situations. I
+needed to both improve visibility and effectiveness, especially during critical on-call incidents
+where time and clarity are crucial.
+
+Action: Instead of taking the feedback negatively, I treated it as a wake-up call. I made two major
+changes:
+
+Improved visibility: I started being more vocal on Slack/Teams and on bridges—whether it was about
+the logs I was checking, potential root causes, or next steps. Even if I was just eliminating
+possibilities, I communicated that clearly.
+
+Deepened my understanding: I doubled down on understanding the systems I was supporting. I debugged
+past incidents, reviewed historical issues, and explored the architecture and data flows in depth.
+Over time, I developed a very deep knowledge of the feature, which not only helped me handle
+incidents more confidently but also enabled me to assist others and preempt issues.
+
+Result: Within a few months, I started getting acknowledgment from my manager and peers for being
+one of the go-to people during incident resolution. My confidence increased, I was more present and
+proactive in incident channels, and I became more comfortable navigating and leading critical
+issues. That feedback early on helped shape the way I approach support situations even today—be
+calm, be visible, and be deeply informed.
+
