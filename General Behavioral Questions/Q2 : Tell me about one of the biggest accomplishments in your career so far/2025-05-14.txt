@@ -1,0 +1,31 @@
+Preferred Day Story 
+
+🟩 SITUATION
+Walmart was launching a new initiative similar to Amazon Prime Day called Walmart Preferred Day, where customers could choose a specific day for delivery. This required showing both normal delivery options and Preferred Day options on the checkout page in real time.
+
+🟦 TASK
+Our challenge was to design a solution that could support parallel evaluation of delivery options (normal and Preferred Day), within strict latency budgets — all while avoiding timeouts, since Preferred Day evaluations were slower and frequently causing degradation.
+
+🟨 ACTION
+To solve this, I led the architectural changes to:
+
+Split the logic into separate threads: One for regular delivery, and one for Walmart Preferred Day.
+
+Initially, the Preferred Day thread was timing out, so we re-engineered the flow:
+
+Introduced a caching mechanism for pre-calculated Preferred Day delivery dates — fetched asynchronously to avoid blocking.
+
+Ensured the main thread always returned regular options within SLA.
+
+Separated promise call handling and sourcing evaluation, so each path could independently fail without affecting the other.
+
+Added timeout fallbacks and circuit breakers to gracefully degrade without affecting customer experience.
+
+🟥 RESULT
+Reduced checkout latency by ~60–80 ms during high load, even when Preferred Day thread lagged.
+
+Reduced timeout errors from Preferred Day evaluation by 70%.
+
+Enabled a smooth rollout of Walmart Preferred Day without impacting the reliability of the core checkout flow.
+
+Improved customer experience by offering additional delivery flexibility while maintaining system resilience.
