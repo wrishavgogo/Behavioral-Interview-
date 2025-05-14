@@ -1,1 +1,17 @@
 noting down answers which came to my mind during that time 
+
+ Example 1 — Reasonable Manager Demand
+Use this: Inventory Scoring Development
+
+S: We needed to rebalance inventory across the supply chain to reduce out-of-stock and overstock scenarios.
+T: My manager set a clear expectation to collaborate with DS and Inventory teams and deliver a scoring system within 4–5 weeks.
+A: I drove HLD and LLD, aligned with stakeholders, and implemented the scoring logic with adjustable thresholds.
+R: The model shifted sourcing behavior—overstock from 29.4% → 33.9%, understock dropped by 1.4%, out-of-stock orders down by 2.5%. My manager’s clear guidance and realistic goals enabled this success.
+
+📌 Example 2 — Unreasonable Manager Demand
+Use this: Netflix Hollow Cache migration
+
+S: We were migrating to Netflix Hollow cache for better memory and performance.
+T: The manager wanted it done within 2 weeks — but the data volume and lack of documentation made that too aggressive.
+A: I raised the concern early, broke the work into safe phases, and created rollback plans. Despite the crunch, I delivered most parts, but flagged a few risks that needed more testing.
+R: Final migration took 3 weeks with a 20ms response time gain and 10% fewer GC pauses. Manager later acknowledged my risk mitigation helped avoid a production issue.
