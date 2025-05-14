@@ -1,0 +1,9 @@
+Hiring managers love curious, thoughtful candidates. Here are some examples you can tweak:
+
+"How is success typically measured for this role?"
+
+"What are some recent technical or business challenges the team has faced?"
+
+"How does this team collaborate with product and data science teams?"
+
+"What qualities do successful engineers on this team usually demonstrate?"
