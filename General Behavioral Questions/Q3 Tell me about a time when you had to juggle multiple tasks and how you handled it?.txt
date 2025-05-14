@@ -1,0 +1,35 @@
+ItemSolutionWithDate in v4 
+
+Situation:
+"In one of my recent projects, we were working on a more performant version of the cart and checkout page, 
+transitioning from v5 (non-Mono Flux) to v4 (using Spring Reactor). The v4 version was initially developed for single-item pages 
+and search pages with an impression promise date. However, the goal was to extend it to support multi-item solutions. 
+For now, the new v4 supports 8 items at a time, and we were integrating our frequency algorithm solution into the new system."
+
+"At the same time, we were facing a product requirement to launch a pilot checkout page with multi-item solutions in v4. 
+The product team had an urgent need for this launch, so there was significant pressure to deliver quickly."
+
+Task:
+"While working on the integration of the frequency algorithm, I proposed a design to my staff engineers, but they advised altering it. 
+They pointed out that, before sending data to the frequency algorithm JAR, there was a lot of data conversion involved, which would increase latency. 
+The challenge was to optimize the architecture and minimize the impact on performance, but at the same time, I had to prioritize the product’s urgent requirement for 
+the pilot launch."
+
+Action:
+"Given the urgent product need, I reprioritized the sprint task and shifted focus to ensuring that the multi-item solution was integrated into v4 first.
+However, to meet the immediate requirement, I proceeded with the data conversion approach for the frequency algorithm, despite knowing it would add some latency."
+
+"I modified the basic unit of the solution to work with the frequency algorithm, which involved making sure that the conversion process before sending 
+the call to the algorithm was handled appropriately. This allowed us to meet the deadline for the pilot launch while also ensuring that the frequency algorithm was integrated."
+
+Result:
+"Although the conversion added some latency to the process, this approach provided us with valuable insights. We were able to measure 
+the performance impact of doing the massive conversion compared to how it would perform if we directly passed data to the algorithm without conversion."
+
+“In terms of metrics, we observed a 10% increase in response time when we included the conversion, but it allowed us to meet the product deadline.
+On the flip side, without the conversion, we anticipate that the overall response time could improve by approximately 15-20%, 
+with lower resource usage and faster processing speeds for large batches of items.”
+
+"The takeaway from this was that even though we had to adjust our approach to meet an urgent need,
+we gained critical performance data to refine our design moving forward. The product team was able to pilot the checkout page on schedule,
+and we now have a clearer roadmap for improving performance in future iterations of the v4 system."
