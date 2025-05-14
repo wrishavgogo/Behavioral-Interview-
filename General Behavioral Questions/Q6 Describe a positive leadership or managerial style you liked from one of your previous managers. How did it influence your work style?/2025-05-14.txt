@@ -1,0 +1,41 @@
+Mathew's nature of asking questions and not taking things for granted 
+
+
+Situation:
+"One of the most impactful leadership styles I experienced was from a Principal Engineer I worked with. He believed in
+ fostering a culture of questioning, encouraging everyone on the team to constantly ask 'why' and 'how.' For example,
+ in design discussions, even at the low level, he would ask probing questions like, 'Why are these two variables
+ together?' This approach was not just about questioning the design but also about encouraging ownership and curiosity
+ in the process."
+
+"He encouraged me to ask a lot of questions, even when I wasn’t familiar with a feature or when I felt unsure about a
+ decision. Over time, I incorporated this mindset into my own approach, always looking to understand the reasoning
+ behind every design choice and asking questions to clarify and improve the solution."
+
+Task:
+"This mindset helped me during a recent project where our team was working on a Pay for Speed option, which involved
+ spinning off a separate thread for faster delivery options. I asked the question, 'Should we display the consolidation
+ option to the customer if they voluntarily choose the Pay for Speed option?' The consolidation option is designed to
+ group items together based on delivery times to reduce the number of packages. I realized that the customer’s delivery
+ choice could impact how we approach the grouping of items."
+
+Action:
+"My question was well-received by the Principal Engineer, and after some discussion, it led to a much clearer and more
+ efficient design. Initially, the product team had planned for a standard approach, but with the question raised, the
+ design became more streamlined and simpler. The product discussions also recognized that integrating the consolidation
+ option into the Pay for Speed flow could optimize both customer experience and the logistics process, leading to fewer
+ packages being sent and a better overall user experience."
+
+Result:
+"This experience reinforced the value of asking questions, even when you think you might not have all the answers. It
+ led to a solution that not only simplified the design but also allowed us to better align the feature with the
+ customer’s needs. My curiosity was appreciated by the Principal Engineer, who acknowledged that after clarification,
+ the design became much easier to implement."
+
+"Additionally, the clarification and simplification of the design process led to a significant reduction in sprint
+ points. The team was able to cut down the project timeline by almost a month, improving efficiency and allowing us to
+ deliver the feature ahead of schedule."
+
+"I’ve carried this approach forward into my own work, especially when tackling complex projects. Whether working on a
+ multi-item solution or discussing new feature designs, I actively ask questions to ensure the best decisions are made,
+ which leads to clearer, more efficient solutions and a better end product."
