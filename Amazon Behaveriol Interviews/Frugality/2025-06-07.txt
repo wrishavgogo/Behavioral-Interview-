@@ -1,0 +1,51 @@
+Frugality 
+
+
+Q1) Tell me about a time when you had to work with limited time or resources 
+
+
+What they are expecting 
+
+
+What they want to hear:
+You stayed calm under pressure.
+
+You made smart trade-offs (e.g., speed vs. accuracy, short-term fix vs. long-term solution).
+
+You acted resourcefully—used tools like Grafana, Splunk, past experience, documentation, or cross-team help.
+
+You delivered a working solution, even if not perfect, and ideally with real business impact.
+
+✅ A strong answer will include:
+SITUATION: There was a tight deadline / lack of manpower / limited access to infra / missing documentation.
+
+TASK: You were responsible for fixing or delivering something despite the limitation.
+
+ACTION: You used tools, logs, automation, past learning, or smart triaging to get it done.
+
+RESULT: You delivered impact, avoided downtime, reduced latency, made a release, or supported the team.
+
+❌ What to avoid:
+Complaining about the lack of resources.
+
+Blaming other teams.
+
+Failing to show initiative or creativity.
+
+Giving a result that sounds like failure without a learning.
+
+
+
+
+
+
+
+
+
+
+
+
+Q2) Describe a time when you needed a bigger budget to achieve desired results but was not granted and how did you overcome the result ? 
+
+
+Q3) Tell me about a time when you though of a clever new way to save money for the company
