@@ -1,0 +1,88 @@
+Bias for Action 
+
+
+Q). Describe a time when you saw some problem and took the initiative to correct it rather than waiting for someone else to do it 
+
+S – Situation:
+At Walmart, we ran weekly stress tests to ensure system resilience under load. For 2 consecutive weeks, the tests triggered OOM (OutOfMemory) exceptions, and each time, a P2 ticket was raised. However, the issue kept getting passed from IDC on-call to PST on-call in the handover notes without resolution, causing alert fatigue and repeated firefighting.
+
+T – Task:
+Although I wasn’t directly responsible at the time, I took the initiative to stop this recurring issue by finding the root cause and fixing it — rather than allowing the ticket to be passed around without progress.
+
+A – Action:
+I began by analyzing a heap dump from one of the failed stress tests and traced the memory spike to a background thread using our frequency-based algorithm for evaluating shipment combinations.
+
+Here’s what I discovered:
+
+A bug had been introduced when handling partial inventory cases.
+
+The logic wrongly used shipment.availableQty instead of the correct shipment.requestedQty, which caused the system to create a huge number of shipment clones when inventory was large (e.g., 1000 units available for a 20-unit request created 50 clones).
+
+This led to object explosion and eventually OOM errors.
+
+I fixed the logic to cap the number of clones to match the request, preventing this runaway memory growth.
+
+I also correlated this fix with another issue: we were seeing Kafka producer errors due to an inflated number of messages (since each clone was being logged). This had led to increased message rate, causing delayed acks at the broker and delivery timeouts at the producer. After the fix:
+
+Kafka error rates dropped.
+
+Producer lag decreased.
+
+Most importantly, OOMs stopped in the next stress test.
+
+R – Result:
+
+The recurring P2 ticket was closed.
+
+On-call no longer got paged.
+
+Kafka logs became manageable.
+
+System stability improved and the root-cause fix saved many engineering hours.
+
+
+
+
+Q) Tell me about a time when you took a calculated Risk ? ( both are different questions ) 
+Mobius range queries on cdc-c ring of cassandra 
+
+What it tests:
+Your decision-making skills, ability to weigh trade-offs, step out of your comfort zone, and act even when outcomes aren't guaranteed.
+
+What interviewers look for:
+Did you analyze the situation?
+Did you evaluate pros and cons?
+Was the risk justified?
+
+What was the impact (positive or negative)?
+
+Example themes:
+
+Deploying a feature with tight timelines.
+
+Refactoring a critical path system close to peak traffic season.
+
+Betting on a new architecture or design that’s unconventional.
+
+STAR answer : 
+
+Situation:
+I was working closely with both my application team and the simulation team, which is responsible for backing up daily inventory and capacity data. One Saturday morning, we were pulled into an urgent call by the TDO because our Cassandra cluster was throwing alerts due to high response times.
+
+Task:
+I needed to quickly identify the root cause of the high latency and fix it before it impacted other services or escalated further.
+
+Action:
+I suspected that recent changes made by the simulation team, particularly some new Spark jobs, might be the cause. I immediately checked the dashboards and confirmed that these new jobs were hitting Cassandra with range queries. Since I was already familiar with the repo, I dug into the code and verified that these queries were triggering compactions and heavy garbage collections. This was causing high latencies on the Cassandra ring, especially in the non-prod environment. Although the issue hadn’t surfaced earlier, this time it breached the SLA, triggering alerts. I took the initiative to turn off the application running these jobs to stop the bleeding.
+
+Result:
+The response times normalized almost immediately after turning off the app. My proactive investigation and quick action helped prevent further degradation and brought stability back to the system.
+
+
+
+
+Q) Tell me about a time when you needed information from someone who wasn't very responsive . What did you do ? 
+
+Tell , the story of looking into the JIRA board and people working on that initiative or who had worked on that initiative 
+
+
