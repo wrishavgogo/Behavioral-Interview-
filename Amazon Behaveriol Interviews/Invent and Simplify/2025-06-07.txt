@@ -1,0 +1,55 @@
+Invent and Simplify 
+
+
+Q) Tell me about a time when you gave a simple solution to a complex problem -> Split Inv use case handling for freq
+
+
+S – Situation:
+At Walmart, we were using a frequency-based algorithm to optimize order consolidation — it selects nodeCM (Customer Method) combinations with the highest frequency across items to minimize shipments and improve efficiency. However, this algorithm didn’t support split inventory scenarios, where a single item’s quantity is spread across multiple nodeCMs. These cases required separate handling, which slowed down responses and added complexity.
+
+T – Task:
+I was tasked with improving performance and handling for split inventory items — especially in a way that could work within the existing frequency algorithm, without introducing major rewrites.
+
+A – Action:
+I proposed a new approach to treat split inventory as virtual individual item solutions. For example, if an item needed quantity 5 and was available as 2 + 2 + 1 across different node~CMs, I:
+
+Broke this into 3 partial ItemSolutions, each tagged with a VirtualOffer.
+
+Sorted them by quantity and picked the top ones that cumulatively satisfied the request.
+
+Passed them into the frequency algorithm as if they were separate items — leveraging existing logic, but unlocking split inventory support.
+
+This was a novel integration, not originally envisioned by the architecture.
+
+R – Result:
+This change gave us multiple advantages:
+
+Split inventory support was now native to the frequency algorithm, eliminating separate logic paths.
+
+Response times improved, especially for split inventory-heavy orders.
+
+We maintained architectural consistency while increasing fulfillment efficiency.
+
+Overall, this gave our system an edge — faster, more consolidated shipments with simpler processing, ultimately improving customer experience and backend performance.
+
+
+Q) Tell me about a time when you created a new way of doing something that gave company a competitive advantage -> Walmart Day include Hollow Cache for pregenerated Dates 
+
+
+
+Situation:
+We had a feature called Walmart Day, similar to Amazon Prime Day, where we always evaluated a Preferred Day delivery option for customers during checkout. The logic ran in a background thread to avoid affecting latency, but due to high computational cost and thread context switching, it often timed out, resulting in the option not being surfaced to the customer—even though eligibility existed.
+
+Task:
+We needed to make the Preferred Day evaluation reliable and performant without compromising on page latency, and ensure that this option was surfaced consistently to users.
+
+Action:
+I proposed using Hollow cache, which we already leveraged for other systems. I designed a solution that precomputes and stores ship ready date, DC, CM, and TNT key combinations based on the inventory picture.
+
+I then built a Kubernetes job that ran every morning to act as the producer for this Hollow dataset, generating delivery predictions for the next 20 days. This allowed us to fetch preferred day options instantly during the request lifecycle—without needing real-time evaluation.
+
+Result:
+This change removed the background thread bottleneck. The Preferred Day option was surfaced 99.9% of the time on the Add to Cart page. Even more importantly, the conversion rate to checkout increased by 30x, giving Walmart a significant competitive advantage during major sale events.
+
+
+Q) 
