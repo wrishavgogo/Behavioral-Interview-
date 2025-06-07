@@ -1,0 +1,12 @@
+Dive Deep
+
+Q1) Tell me about a time when you devised a new way of looking at data that helped improve performance 
+
+
+Q2) Describe a time when you resolved a challenging technical situations which should have been done by one of your employees
+
+Q3) Tell me about a time when you had to dive deep into the data and the results you achieved 
+
+Frequency Algo 
+difference in shipment , difference in zoneSum , difference in Edd Sum 
+
