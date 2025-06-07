@@ -1,0 +1,22 @@
+Learn and Be Curious 
+
+Q1) Tell me about a time when you influenced a change just by asking questions 
+
+Q2) Tell me about a time when you solved a problem just by superior knowledge or observation -> transitive dependency , bleeding in preProd leading to blocking of e2e testing , immediate turn of of algo, and switched on Legacy algo , bumped up soln-gen version to fix class Cast exception issue 
+
+
+S – Situation:
+During an optimization effort, we updated our frequency algorithm logic used in the solution-generation service. However, the service started throwing a ClassCastException at runtime, causing failures in generating solutions for bundles.
+
+T – Task:
+I needed to quickly identify the root cause and fix the issue to avoid downtime and ensure our solution-generation pipeline worked seamlessly.
+
+A – Action:
+By closely inspecting the dependency tree, I observed that due to transitive dependencies, the solution-generation service was unintentionally picking up an older version (mcse-commons v4) of a shared library instead of the newer v5. This was problematic because a model class constructor had changed from 5 parameters to 6 in the newer version. The mismatch led to the ClassCastException.
+
+Using this insight, I immediately rolled back the solution-generation service to use the legacy algorithm to stop the bleeding and prevent further failures. Simultaneously, I updated the build configuration to explicitly bump the mcse-commons version to v5, ensuring the correct dependency was used. After that, the solution-generation pipeline worked perfectly without errors.
+
+R – Result:
+Thanks to this careful observation and knowledge of dependency management, we restored the service functionality quickly, minimizing downtime and impact. The fix also prevented future dependency conflicts, making our build process more robust.
+
+
