@@ -1,0 +1,46 @@
+Customer Obsession
+
+Q1) Who was your most difficult customer ? --> Healthy inventory design 
+
+What they’re looking for:
+Your interpersonal skills – Can you manage conflict or tension gracefully?
+Your empathy and professionalism – Can you see the other person’s perspective?
+Your problem-solving under pressure – How do you balance customer satisfaction with feasibility?
+
+S – Situation:
+One of the most challenging stakeholders I worked with was a Product Manager who gave us a loosely defined requirement — they wanted to "bias sourcing decisions toward healthy inventory nodes" to prevent orders from flowing to understocked stores. However, there was no clear definition of what "healthy" meant, nor how it would fit into our existing sourcing behavior.
+
+T – Task:
+I was tasked with translating that high-level idea into a practical, efficient system that would not disrupt current sourcing flows or increase fulfillment latency.
+
+A – Action:
+I took full ownership and began by coordinating with the Inventory team to understand how inventory signals were structured and with the Data Science team to develop a scoring model. We needed a logic that aligned with business goals but also didn’t deviate drastically from current sourcing behavior.
+
+I worked closely with the DS team as they iterated on a scoring model that wouldn’t "sway too much" from existing sourcing logic — ensuring smooth adoption. I then designed the full data pipeline — from score computation to routing integration — and built both the HLD and LLD. I also ensured that the scoring values were integrated into our system without hurting response times, working with infra to validate performance.
+
+R – Result:
+The new Inventory Health Scoring system went live successfully. It led to:
+
+A reduction in understock node routing from 7.2% → 5.8%
+
+An increase in overstock routing from 29.4% → 33.9%
+
+Out-of-stock orders reduced by 2.5%
+
+Despite starting from a vague ask, by aligning multiple teams and keeping performance in check, we shipped a high-impact feature that made sourcing smarter and fulfillment more reliable.
+
+
+
+
+Q2) Give me an example when you did not meet client's expectation ? What was their reaction and how did you rectify it ? 
+
+
+Q3) When working with large number of customers , its tricky to deliver excellent service to them all . How do you go about 
+prioritizing customer needs 
+
+Story abt director requesting faster shipment and metric , logging 
+and me implementting separate threads for aggressive thread and consolidated thread , 
+
+
+
+Q4) Tell a story when you had to apologize to someone . 
