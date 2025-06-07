@@ -1,0 +1,46 @@
+Deliver Results 
+
+
+Q1) By providing an example tell  me when you had to handle a variety of assignments , Describe the results 
+
+
+
+Q2) Give me an example when you were 75% of the way of the project and you had to pivot strategy , how were you able to 
+make it into a sucess story ? 
+
+Bundle in frequency reroute of Anjali 
+
+
+S: Situation
+I was working on optimizing the bundling logic for orders, aiming to reduce packaging costs by minimizing the number of packages per order. Initially, I implemented a complex permutation & combination-based algorithm to generate optimal bundles while covering edge cases. We were about 75% complete, but during performance reviews, our director raised concerns about the latency cost of this approach, especially under high traffic, and advised against proceeding.
+
+T: Task
+We had to pivot quickly to a more scalable, lower-latency solution — without delaying the delivery timeline or compromising too much on bundle accuracy. The challenge was to validate the performance of the new frequency-based bundling algorithm before enabling it.
+
+A: Action
+I developed a frequency-based heuristic that used historical order patterns to predict likely bundles, eliminating the need for expensive computation.
+
+To validate the switch, I fetched real-time production requests from today's traffic and created a CSV dataset of these inputs.
+
+I ran these requests through JMeter simulations to compare latency and accuracy between the legacy and frequency-based approach.
+
+I then created a report where I flagged scenarios where the legacy approach still outperformed frequency-based bundling.
+
+The number of such cases was well below a defined threshold, which gave us confidence to proceed.
+
+I also collaborated with QA and SRE teams to monitor the performance via Grafana dashboards post-deployment.
+
+The original logic was kept behind a feature flag for selective fallback.
+
+R: Result
+The new bundling logic reduced latency by ~60 ms on average and scaled well during peak loads.
+
+The packaging efficiency remained nearly the same, with negligible business impact from the few missed scenarios.
+
+The solution went live on time, and is now used as the default logic, contributing to faster checkout and lower packaging costs.
+
+
+
+Q3) Tell me about a time when you overcame obstacles and delivered results ?
+
+
