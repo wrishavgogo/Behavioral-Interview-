@@ -1,1 +1,35 @@
 
+Situation :- Our application's regression suite was broken v3 , and at that time i was working with an Architect on the v4 version which was getting ready for search and browse page only , only limited number of people were working on that repo at that time . 
+
+Task :- For the new repo we wanted to build a robust regression approach to ensure proper code merges , MVP was already prepared and I had to make the repo stand alone robust and setup a proper regression system 
+
+Action :- I checked why was the current v3 not a good fit and where was it failing , then I found out regressions were written on a separate repo and hosted on a oneops cluster , which would sometimes run and sometimes not , and was detached from the existing PR build pipeline , 
+Discovered and came across Cucumber in which you can write regressions in plain english and write methods and link it to 
+the english and link method calls to it 
+
+like this 
+
+@And("latitude {string} and longitude {string}")
+    public void theRequestHasLatLong(String lat, String longitude) {
+        request.getDestinations()
+                .stream()
+                .filter(destination -> "0".equals(destination.getDestinationId()))
+                .forEach(destination -> {
+                    Address address = destination.getAddress();
+                    address.setLatitude(Double.parseDouble(lat));
+                    address.setLongitude(Double.parseDouble(longitude));
+                });
+    }
+
+"latitude {string} and longitude {string}" ---> this string will make sure this method is called 
+
+Result :- 
+Was able to convert v3 regressions and onboard them as well and currently doing the task of onboarding them on the pipeline 
+and shipping them onn kubie jobs 
+easier for product to track test cases and handle e2e and also slack integration for report 
+
+
+Difficulty :- 
+
+explaining people how to onboard cucumber , convincing team that its a good fit for the requirement
+linking with slack and the pipeline 
