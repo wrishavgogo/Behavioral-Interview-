@@ -1,0 +1,18 @@
+1. Understand the Scope and Prioritize
+First, I make sure I fully understand the requirements and constraints. I work with stakeholders to identify the critical features or deliverables, so I can prioritize tasks based on business impact.
+
+2. Break Down the Work
+I break the project into smaller, manageable chunks with clear milestones. This helps in tracking progress and adjusting quickly if anything starts slipping.
+
+3. Collaborate Actively
+I keep constant communication with my team—syncing up frequently to ensure alignment. If I'm blocked or if dependencies arise, I raise them early to avoid last-minute surprises.
+
+4. Stay Lean and Avoid Over-Engineering
+In deadline-driven scenarios, I focus on delivering value fast. That means I avoid premature optimization and stick to practical, testable solutions. I’m also open to revisiting and improving things post-deadline.
+
+5. Time Management and Focus
+I minimize distractions, block time for deep work, and monitor my own productivity. If required, I put in extra effort temporarily to meet the deadline, but not at the cost of quality.
+
+6. Test and Deploy Carefully
+Even under time pressure, I make sure to write tests for critical paths and validate integrations to ensure we don’t ship regressions or break something in production.
+
