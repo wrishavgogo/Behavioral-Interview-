@@ -12,11 +12,10 @@ much confidence. The upstream (Unifera Brow and sacing were not confident with t
 Splits neither was I.
 Intend of waiting furthur I infamed my prodhI manager and my manage got this, which led to steam, having
 disrussims und decided to Keap it simple und just considen ,splet.
-Rent →
-The product managers were than fut that I had informed them couly on and they we alto
-convince eadinship. Dev elfat localiged to my team and rest of the teamy had to do no change.
-Outc the yeunts we culy malbel te
-ist ane.
+Result →
+The product managers were thank full that I had informed them couly on and they we alto
+convince eadinship. Dev effort localized to my team and rest of the teamy had to do no change.
+Out of 4 events on the month of november we missed on 1 event , and were able to ship bug free code 
 Ret ue wte able to cata.
 → Yiu proren EDD reduce metries,
 OOS was reduced 
