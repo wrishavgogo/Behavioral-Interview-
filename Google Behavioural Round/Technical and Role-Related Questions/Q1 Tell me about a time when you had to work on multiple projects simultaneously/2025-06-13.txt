@@ -1,5 +1,9 @@
 
-ItemSolutionWithDate in v4 
+ItemSolutionWithDate in v4  
+
+( also include the reArch story that multiItemFulfilmentPlanner had dates , which were internally calling hollow cache parallel calls , but since its in memory , 
+but i discussed this with my architect and i said that i have seen approach getting changed to meghacache ( memcached ) so better to separate it out before hand )
+but due to till crunch i went ahead with the existing approach only and documented it that to later comeback and fix it 
 
 Situation:
 "In one of my recent projects, we were working on a more performant version of the cart and checkout page, 
