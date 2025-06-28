@@ -1,0 +1,53 @@
+ Tell me about a time when you were wrong
+
+Situation:
+
+“In one of my previous projects, our product team came to me with a requirement to reduce EDD (Estimated Delivery Date) errors by enabling a multihop solution in our promise pipeline. Promise had two versions:
+
+v3, where the multihop code was already implemented but required testing and feature activation
+
+v4, where no multihop handling existed, but I initially believed adding it would be straightforward.
+
+I was the sole owner and point of contact responsible for this feature end-to-end.”
+
+Task:
+
+“My responsibility was to do discovery across both codebases, estimate the level of effort, set realistic deadlines, and communicate the plan to all stakeholders. I needed to ensure the implementation was tested thoroughly and could go live with minimal risk.”
+
+Action:
+
+“I conducted detailed discovery on both v3 and v4. For v3, I confirmed that most of the logic was already present, so it mainly needed testing and validation. For v4, after reviewing the code, I felt confident that adding multihop support would require only minor changes.
+
+Based on this assessment, I committed to a timeline of about 1.5 months, including development, E2E testing in non-production environments, and a buffer period. Over the next several weeks, I completed the code changes and testing as planned, and the feature was ready on schedule.
+
+Given the impact this would have on reducing EDD errors, both my product manager and the product director were excited to launch it.”
+
+Result:
+
+“After deploying the changes, I started seeing performance degradation on the search and browse pages in v4 because the multihop solution generation logic introduced significant computation overhead. I had not fully anticipated the performance impact in those user flows.
+
+Fortunately, I had put the feature behind a configuration flag, so I quickly turned multihop off for v4 to contain the issue, while keeping it enabled in v3 (which became v5).
+
+However, this decision led to an unexpected discrepancy:
+
+On the search and browse pages, customers saw normal carriers with 1-day delivery options disabled.
+
+On the add-to-cart page, those same carriers still showed 1-day delivery enabled.
+
+This inconsistency triggered an escalation from our VP the following day.”
+
+Reflection:
+
+“I immediately acknowledged the mistake, documented the incident thoroughly, and prepared a detailed RCA explaining where my assumptions had been incorrect. The core issue was that I underestimated the complexity of v4 and did not fully understand all the dependencies and parallel development work happening in that repo.
+
+The main learning for me was that even when I feel confident about my discovery, it’s critical to:
+
+Validate assumptions with more experienced teammates.
+
+Pressure-test performance impacts in every user flow, not just the happy path.
+
+Over-communicate when there are multiple teams working in the same area.
+
+Since then, I’ve changed how I approach discovery. I now schedule review sessions with other owners and product partners to cross-check assumptions before committing timelines or releasing impactful changes.”
+
+( Also talk about geo master and worker to incorportate about precompute cache to remove computation results )
