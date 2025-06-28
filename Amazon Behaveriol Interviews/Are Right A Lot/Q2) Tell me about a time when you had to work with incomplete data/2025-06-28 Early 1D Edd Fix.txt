@@ -7,7 +7,7 @@ Task :
 
 Figure out how to figure out how to bring back the error rate to normal . Figure out what discripancies are there b/w promise and sourcing 
 
-Action :
+Action : ( mention that I kept my manager and director in loop with the updates that I was finding and what were the unknowns and knowns ) 
 
 Step1 -> From the splunk dashboard pulled out the excel sheet of the errors of different types . Since the error rate had increased from 0.9 % to a 
 staggerring 2.7 % hence  i applied a filter on the error rate , so see which type or error count is the max count 
