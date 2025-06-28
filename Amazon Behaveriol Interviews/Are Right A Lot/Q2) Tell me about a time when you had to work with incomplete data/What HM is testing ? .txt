@@ -1,0 +1,25 @@
+Why do they ask this? What does the Hiring Manager want to know?
+
+This is about judgment and decision-making under uncertainty.
+
+Specifically, this question probes whether you:
+
+1. Use sound reasoning when you don’t have perfect information.
+
+  a) Do you freeze up waiting for all the answers?
+  b) Or can you make progress with partial data?
+
+2. Balance risk and action.
+
+  a) Are you able to weigh trade-offs?
+  b) Can you quantify what you don’t know and still move forward?
+
+3. Validate and adjust your assumptions.
+
+  a) Do you test hypotheses as you go?
+  b) Are you open to changing direction if new facts emerge?
+
+4. Communicate transparently about uncertainty.
+
+  a) Did you keep stakeholders informed about what was known and unknown?
+
