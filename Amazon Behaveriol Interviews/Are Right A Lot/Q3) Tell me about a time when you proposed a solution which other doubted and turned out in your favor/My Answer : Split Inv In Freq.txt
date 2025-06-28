@@ -1,0 +1,28 @@
+
+Situation :- 
+
+Handling Split Inventory Use Case in Frequency Algo . Director and Principal Engineer wanted to handle the split inventory use case 
+by creating the virtual offers and then passing all of them through frequency Algo . I suggested an approach that let the algo run organically without 
+including the split inventory solutions and after that whatever solutions remain we can distribute the quantity by max quantity nodes ( i.e nodes which have the 
+maximum quantity ) . My Approach was doubted and thought to be difficult to code and implement compared to the earlier proposed solution , 
+there was an edge case which my code would ideally take care but in the earlier proposed solution of "Virtual~Offer" it would get missed
+
+Task :- 
+To go about the proposed approach of my director and my approach and try to do some discovery and test which one would be better 
+
+Action :- 
+The approach proposed by my seniors was fairly simple and I was able to code it up in the weekend . Then I did some metric alocation . There is a smart-sourcing-logging repo , which is a producer to the kafka topic for which the big query is the consumer . In our simulation profile which is only used 
+for fidelity analysis i chose a table in our big query which was unused and populated details like 
+legacy shipments and frequency algo shipments and ran both the algo . In parallel threads and this time i did not give any timeout , I just gave .get()
+as there is no problem with response time .
+
+Result :-
+
+In the result I was comparing , the main motive of the algo is to perform better than the legacy algo in terms of consolidation . So the number of packages 
+in the frequency should be lesser or equal to legacy as we cannot perform worse than the current . 
+In the results i saw multiple rows where frequency was loosing to legacy in terms of shipments by 1 . 
+I took screenshots and documented everything to strengthen my case 
+
+I also created a splunk dashboard for better visualization to mark how many times did legacy perform better . 
+
+Edge case which was expected to let go was appearing every 5 orders per hour , which I should to the director and my principal engineer and was high according to them , So then they agreed that my approach is the right way to go . Which after approvals I started documenting and started to code .
