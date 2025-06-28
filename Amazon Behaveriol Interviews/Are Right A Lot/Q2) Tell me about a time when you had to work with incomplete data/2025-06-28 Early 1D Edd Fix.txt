@@ -1,0 +1,55 @@
+Situation :
+
+In my last oncall , I was assigned a splunk dashboard to maintain a metric of EDD errors , early EDD  , late EDD . Earlier the OTD rate was 99.1 % and the edd errors safe limit was 0.9 % . Now after few deployments and lot of releases within  two weeks the edd error rate had increased to 2.7 % . 
+
+
+Task : 
+
+Figure out how to figure out how to bring back the error rate to normal . Figure out what discripancies are there b/w promise and sourcing 
+
+Action :
+
+Step1 -> From the splunk dashboard pulled out the excel sheet of the errors of different types . Since the error rate had increased from 0.9 % to a 
+staggerring 2.7 % hence  i applied a filter on the error rate , so see which type or error count is the max count 
+
+and also used to splunk dashboard to get a earlier snapshot of the excel to see how the error picture was earlier .
+
+I saw 4 types of error count 
+
+early sourcing 
+early 1Day sourcing 
+late sourcing 
+late 1D sourcing 
+
+out of which Early 1D Edd was maximum . 
+
+I narrowed down the bucket and started diving deep , 
+
+In the sourcing orders we have a promiseInfo object in the requests , and i checked various of the promiseInfo objects to see that , 
+the orders were divided into various buckets 
+
+MBC -> frequency Algo ( carrier Id has changed )
+Legacy -> algo bucket 
+Walmart Day Bucket -> 
+
+Started debugging the MBC algo bucket , as i had some idea about frequency algo i asked the dev of MBC about how this 
+
+Result :- 
+
+MBC frequency Algo -> config 
+
+Node Cm ( in sourcing did not do restart so node_type was not changed ) 
+Node ( promise a deployement was done )
+checked the code , hence MBC bucket all errors were due to this 
+
+also the maxSolutionsperNode = 10 
+so sourcing had CPU = 12 , and memory = 24 gb  ( this was done after holiday scale down) 
+promise had CPU = 20 and memory = 36 GB 
+
+I pointed out , which corelated to have errors in high CPU and memory usage in few pods , which always remained above threshold but did not 
+break the SLA 
+
+
+Walmart_day= bucket , date cache was facing some issue , this was sourcing consumer was not able to come up 
+properly , hence increasing the CPU and RAM in the kitt file helped in this as well 
+
