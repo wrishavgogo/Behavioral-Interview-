@@ -1,0 +1,29 @@
+this is in my are Right a Lot section only and this is the story i can think of as of now 
+
+Situation:
+
+During my last on-call rotation, I was assigned to maintain a Splunk dashboard monitoring Estimated Delivery Date (EDD) errors. Historically, our On-Time Delivery (OTD) rate was 99.1%, with EDD errors capped at 0.9%. Within two weeks of several releases, the error rate unexpectedly spiked to 2.7%.
+
+Task:
+
+I needed to figure out what was causing the discrepancy between the Promise and Sourcing services and bring the error rate back to normal, even though no clear ownership existed across the involved teams.
+
+Action:
+
+I started by pulling historical error data from Splunk and comparing snapshots to identify which error types were most frequent. Early 1-Day EDD errors were the largest contributor, so I focused on that bucket.
+
+I investigated the PromiseInfo objects attached to sourcing orders and categorized them by algorithm: MBC Frequency Algo, Legacy Algo, and Walmart Day buckets.
+
+To clarify how MBC Frequency Algo worked, I proactively reached out to the developer for details. I discovered that the Node CM in Sourcing hadn’t restarted after a config change, while Promise had been redeployed, leading to inconsistent node_type configurations.
+
+Additionally, I noticed that sourcing pods were under-provisioned due to post-holiday scaling—CPU was set to 12 and memory to 24 GB, while Promise had higher capacity. This explained the persistent high CPU usage and memory pressure.
+
+In parallel, I traced Walmart Day errors to date cache issues preventing the sourcing consumer from coming up properly.
+
+Throughout this process, I kept my manager and director in the loop with regular updates on knowns, unknowns, and progress.
+
+Finally, I increased the CPU and memory allocations in the kitt files and coordinated the Node CM restart, which stabilized the environment.
+
+Result:
+
+These actions brought the EDD error rate back to the safe threshold and improved resource utilization across the services. The investigation also helped the team identify gaps in deployment coordination to avoid similar issues in future releases.
