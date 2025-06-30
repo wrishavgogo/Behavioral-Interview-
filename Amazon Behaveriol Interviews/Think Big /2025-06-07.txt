@@ -6,3 +6,15 @@ Think Big
 
 
 2. Tell me when you went above and beyond the scope of project 
+
+working on multihop wfs , 
+introduced a filter and my architect wanted to have a filter by which i can track that ok , this SIS is rejected for this reason 
+, i created a MULTIHOP_DEBUG , 
+and while doing that i felt i could introduce multiple debug pointers , 
+or various other filters which could help debugging issues faster , 
+
+i completed my dev work and behind the scenes kept writing these debug and introduced 
+and that would come in the postman response with the headers , 
+Created confluence with the flow so that it becomes easier for them to debug issues 
+
+help was OAR could debug issues them selves 
