@@ -1,0 +1,38 @@
+Question 1 and Question 3 answered here :- 
+
+
+Navigating Cross-Team Dependencies for Node-Level Reservation
+Question: How do you work with other people?
+
+Situation:
+
+Early in my time at Walmart, I was tasked with building a feature called node-level reservation. 
+The goal was to ensure that during a promise call, whichever fulfillment node was reserved during sourcing remained consistent, reducing EDD errors so that promise dates aligned with sourcing dates.
+To deliver this, I needed close collaboration with two upstream teams—Unified Promise and Cart—and two downstream teams.
+
+Task:
+
+My responsibility was to design the feature end-to-end, define the contracts, 
+and drive alignment among all stakeholders so the feature could be delivered in time for our upcoming annual event.
+
+Action:
+
+As I engaged with the upstream teams, there was a disagreement over handling split inventory use cases. My proposal was to make reservations on all the nodes involved to ensure accuracy,
+but the upstream team was concerned about the complexity and did not have bandwidth to implement additional reservations.
+To keep the project moving, I offered to take on the extra ownership of handling multiple-node reservations myself. 
+I worked with the product team to discuss the trade-offs and finalize contract changes.
+Despite repeated discussions, some upstream and downstream teams remained concerned about scope and timelines, especially given the event deadline.
+So, after clear communication and agreement with stakeholders, I adapted the approach: instead of reserving all nodes, 
+I implemented a simpler solution to reserve only the first node in a split, which was less accurate but acceptable for launch.
+
+Result:
+
+The feature was successfully delivered in time for the annual event, reducing EDD inconsistencies.
+I was able to maintain good working relationships with all teams by clearly communicating constraints and trade-offs, 
+and by taking on additional responsibilities to help lighten their load.
+
+Learning:
+
+This experience taught me that collaborating effectively isn’t always about convincing others to adopt your preferred approach.
+Sometimes, it’s about listening to everyone’s constraints, adjusting your plan pragmatically, and finding a middle ground that balances quality with timelines.
+By stepping up to own the more complex parts and maintaining open communication, I built credibility and trust across teams.
