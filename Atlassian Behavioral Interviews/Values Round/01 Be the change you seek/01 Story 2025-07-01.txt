@@ -1,0 +1,33 @@
+Story 1: Revamping Regression Testing Pipeline
+Question: When have you advocated to push for change?
+
+Situation:
+
+During our last annual event, the team had to ship multiple features rapidly to meet business deadlines. Our regression suite was hosted on OneOps cloud VMs,
+which frequently went down. Because of this instability and the time pressure to deliver, we often had to compromise on regression coverage. After the event,
+everyone agreed to fix this, but the plan stalled due to the winter holidays. As a result, new features regularly went live without proper regressions,
+leading to frequent production rollbacks.
+
+Task:
+
+I saw the lack of a reliable regression pipeline and proper canary validation as critical gaps risking product quality. 
+I decided to proactively explore solutions to stabilize and improve our testing process.
+
+Action:
+
+I first tried to fix the existing pipeline but found that the OneOps VMs remained unreliable, and the cloud team couldn’t provide a resolution.
+So I began researching alternative frameworks and came across the Cucumber framework, which I learned about through our internal Slack channels. 
+I did a detailed discovery of its benefits, especially its in-memory execution and plain-English test definitions, and pitched this idea to my staff engineer.
+He suggested we integrate it with our existing kitt files to spin up dedicated pods for regression runs and reuse our hollow cache pipeline to avoid dependency on live wiremock calls.
+I led the effort to prototype this solution, integrate Cucumber into our CI/CD pipeline, and set up Slack reporting to make regression results transparent for product managers.
+
+Result:
+
+The outcome was a much faster and more stable regression process, with tests running in memory and clear visibility of results. 
+Writing new regressions became significantly easier, enabling more comprehensive coverage. Most importantly, 
+the improvements led to a substantial reduction in production rollbacks after deployments.
+
+Learning:
+
+Through this experience, I learned that when you take the initiative to drive change, you often inspire others to contribute as well. 
+By proactively researching and proposing solutions, I was able to gain support from senior engineers and improve quality across the team.
