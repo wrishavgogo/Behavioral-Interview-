@@ -1,0 +1,41 @@
+Mentoring a New Teammate to Deliver a High-Impact Feature
+Question: How do you work with other people?
+
+Situation:
+
+A new team member had recently joined Walmart with about 8 months of experience. He was eager to prove himself by delivering impact on a critical feature but was feeling anxious,
+as he hadn’t received a good rating in the previous review cycle. He was tasked with implementing an efficient caching mechanism for cloud configs using a concurrent hashmap 
+so that config keys wouldn’t need to be parsed repeatedly from JSON. Additionally, whenever a key was updated on the cloud, all pods would get an incremental Kafka event 
+to invalidate the corresponding entry in the cache.
+
+Task:
+
+While he had completed the development work, he was unsure how to approach performance testing and validate the effectiveness of his solution.
+He shared his concerns with me privately, expressing that he felt overwhelmed and worried he wouldn’t be able to demonstrate measurable impact.
+
+Action:
+
+I decided to step in and support him because I knew this change had the potential not only to help him build credibility but also to significantly improve our 
+team’s metrics around latency and system performance. Since I had been closely working with the simulation team, I knew how to create a production-like test environment to benchmark the changes.
+I guided him through setting up realistic load simulations, including batching requests (e.g., 40 requests per batch with 100 batches running concurrently) 
+to measure system performance under stress. I also helped him define clear metrics to track improvements in average and p99 response times.
+Together, we analyzed the results, prepared a summary, and built a data-driven case to present to the leadership team.
+
+Result:
+
+The performance tests showed a significant improvement, reducing average response times by ~50 ms and improving p99 to around 95 ms.
+During peak US traffic, the system performed even better. This gave leadership confidence to approve the change for deployment.
+Most importantly, it boosted my teammate’s confidence, as he could clearly demonstrate the impact of his work and felt supported by the team.
+
+Learning:
+
+This experience taught me that helping a teammate succeed not only builds trust and strengthens relationships but 
+also benefits the broader team by unlocking improvements that might otherwise be left unexplored.
+It reinforced the value of letting go of a “not my work” mindset and staying open to supporting others whenever possible.
+
+✅ How it changed:
+I added:
+
+“…because I knew this change had the potential not only to help him build credibility but also to significantly improve our team’s metrics around latency and system performance.”
+
+This makes your motivation both empathetic and strategic.
