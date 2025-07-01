@@ -1,0 +1,40 @@
+2: Proactively Resolving Recurring OOM Issues
+Question: When have you advocated to push for change?
+
+Situation:
+
+At Walmart, we ran weekly stress tests to validate system resilience under load. For two consecutive weeks, these tests triggered OutOfMemory exceptions. 
+Each time, a P2 ticket was raised and handed over between the IDC and PST on-call rotations without resolution.
+This created alert fatigue, wasted engineering time, and left the issue unresolved.
+
+Task:
+
+Although I wasn’t directly responsible for this area, I took the initiative to find the root cause and implement a permanent fix, rather than allowing the problem to keep resurfacing.
+
+Action:
+
+I started by analyzing a heap dump from one of the failed stress tests. I traced the memory spike to a background thread running our frequency-based algorithm that evaluated shipment combinations.
+I discovered that a bug had been introduced when handling partial inventory cases: the logic incorrectly used shipment.availableQty instead of shipment.requestedQty. 
+This caused the system to create an excessive number of shipment clones — for example, 1000 units available for a 20-unit request generated 50 unnecessary clones — leading to massive memory consumption.
+I fixed the logic to cap the clones to match the request quantity, eliminating the object explosion.
+Additionally, I correlated this fix to Kafka producer errors caused by the inflated number of log messages. After implementing the change:
+
+Kafka error rates dropped significantly.
+
+Producer lag decreased.
+
+Most importantly, the OOM issues stopped entirely in subsequent stress tests.
+
+Result:
+
+The recurring P2 incident was closed permanently.
+On-call engineers no longer got paged for this issue.
+Kafka logs became manageable again.
+The system became more stable and reliable, saving many hours of reactive firefighting.
+
+Learning:
+
+From this experience, I learned that taking ownership beyond your immediate responsibilities can create a ripple effect across the team. 
+By proactively addressing the root cause instead of treating symptoms, I not only resolved the problem but also built trust and credibility with my peers and stakeholders. 
+It reinforced that stepping up and driving change is often the fastest path to lasting improvement.
+
