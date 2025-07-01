@@ -1,0 +1,43 @@
+Unblocking E2E Testing Under Infrastructure Constraints ( Healthy Inventory Issue) 
+Question: How do you think about prioritisation and decision making?
+
+Situation:
+
+I was working on a Healthy Inventory initiative at Walmart, which involved adding a bias in our sourcing algorithm to prefer stores and FCs 
+with better inventory health scores. I had completed the coding, development, and manual testing. The final step was end-to-end testing, which was
+crucial because our team was the last in the pipeline, and several upstream teams had already completed data validation on a tight timeline.
+
+Task:
+
+My responsibility was to ensure e2e validation was completed smoothly so we could launch on schedule. The validation depended on querying HIP costs
+from our OLAP DB by joining groupTransactionIds — which were populated from Kafka events.
+
+Action:
+
+I discovered that the Kafka cluster used in lower environments was provisioned on a legacy setup, causing intermittent data loss. 
+The order table had data, but the cost table often didn’t — breaking the query logic.
+I explored multiple infrastructure-level fixes: increasing retention, bumping message size, and switching compression from Snappy to LZ4 —
+none of which solved the problem in time.
+With pressure building up and timeline risk increasing, I immediately escalated the issue to my manager and director to keep them informed.
+While debugging, I noticed a pattern: whenever I restarted the local server or pod, the service would momentarily behave correctly.
+So, I devised a workaround: port-forwarded to the pod, fetched the request directly from Splunk logs, and replayed them manually to 
+verify correctness. I proposed this to the product team and the e2e tester, and they agreed this was a valid way to unblock us.
+
+Result:
+
+With this workaround, we were able to complete e2e testing on time, validate the logic end-to-end, and meet the planned release
+timeline without compromising confidence in the feature.
+
+Learning:
+
+This experience taught me that decision-making is about finding the right balance — between technical perfection and delivering value on time.
+By staying calm under pressure, being transparent with leadership, and coming up with a pragmatic workaround, I was able to support the team while
+maintaining the integrity of the launch.
+
+✅ Emphasize during delivery:
+
+You made a calculated decision, not just a “hack.”
+
+You balanced system correctness, team pressure, and delivery urgency.
+
+You didn’t try to be a hero — you communicated early and collaborated well.
