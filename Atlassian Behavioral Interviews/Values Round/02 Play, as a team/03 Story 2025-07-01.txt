@@ -1,0 +1,36 @@
+( leaving separation of date calculation in v4 to let others complete their features ) 
+Balancing Long-Term Design and Team Deadlines
+Question: Tell me about a time when you sacrificed personal goals for team efforts.
+
+Situation:
+
+In Walmart’s v4 repository, I was working to optimize the system by reducing database calls and integrating hollow cache more deeply. 
+As part of this, I was assigned to handle two new flows—aggregated aggressive and consolidated flows—by running them in parallel threads to improve performance.
+
+Task:
+
+I prepared a detailed design for separating these flows, got it reviewed and approved by my lead, and started implementing two parallel calls. 
+My personal goal was to build a design that would be robust not only for today’s in-memory hollow cache but also scalable for the future if we had to switch to an external caching layer 
+like MemcachedD.
+
+Action:
+
+While implementing, I realized that each thread separately fetched hollow cache dates in memory. Although this was efficient in the current setup, 
+I knew from experience that as the marketplace grew and moved to MemcachedD, this would double the network calls per request, potentially impacting latency.
+I raised this concern with my lead, and he asked me for a Level of Effort estimate. However, several other critical initiatives—like frequency integration, 
+MIS integration, and overall cart migration testing—depended on this work being completed quickly.
+After discussing trade-offs, I decided to defer my ideal solution to avoid blocking the team. 
+I removed the separation of date calculations for the time being and proceeded with the simpler design that met the current requirements. 
+To ensure we wouldn’t lose the optimization opportunity, I documented the proposed future approach and asked my lead to create a separate branch 
+so I could pick up the work later when timelines allowed.
+
+Result:
+
+This decision enabled the cart migration to go live smoothly without delays. All dependent teams were able to proceed with integration 
+and testing on schedule. Later, once the migration stabilized, I returned to the work and successfully integrated the improved design for eliminating duplicate date calculations.
+
+Learning:
+
+This experience taught me that sometimes, even when you see a better long-term solution, it’s important to prioritize the team’s immediate goals over personal
+ownership of the “perfect” design. By being flexible, documenting improvements clearly, and communicating proactively, I was able to support the team’s delivery 
+while still ensuring the system could evolve in the right direction later.
