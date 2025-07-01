@@ -1,0 +1,35 @@
+Preventing Suboptimal Shipment Consolidation for Customers
+Question: How is your mentality user-centred? What trade-offs did you make to put the customer first?
+
+Situation:
+
+We were integrating a new algorithm to enforce customer order consolidation, aiming to reduce the number of shipments a customer would receive. 
+One tricky use case involved split inventory—where an item was spread across multiple fulfillment nodes.
+
+Task:
+
+The approach decided by senior engineers and directors was to treat each part of a split inventory as a separate “virtual offer,” and
+then pass each of these into the frequency algorithm as if they were individual offers. This meant that each split would be evaluated independently,
+potentially resulting in suboptimal consolidation.
+
+Action:
+
+While implementing this, I discovered a specific test case where, using the proposed method, our new algorithm would actually 
+lose to the legacy one—meaning customers would receive more shipments, not fewer.
+Initially, this was considered an edge case by the leadership team. But I wasn’t satisfied with making that assumption.
+I performed additional analysis using our OLAP BigQuery setup and also simulated real-time orders in our simulation environment.
+It turned out that this edge case wasn’t rare—we were getting 2 such orders every hour.
+I brought this data to the director and highlighted the customer impact. This led to a deeper discussion among the team, 
+and eventually, we aligned on a hybrid approach that handled split inventory more gracefully—preserving customer experience without sacrificing
+performance.
+
+Result:
+
+With the hybrid approach, we didn’t see any events where the new frequency logic lost to legacy in terms of consolidation.
+This meant customers consistently got fewer shipments, improving their delivery experience and reducing shipping complexity.
+
+Learning:
+
+This experience taught me that protecting the customer experience sometimes means respectfully challenging even senior decisions,
+especially when backed by data. What might seem like an edge case on paper can have real-world impact at scale.
+Being persistent and data-driven helped us avoid rolling out a flawed experience and ensured we stayed true to what mattered most: the customer.
