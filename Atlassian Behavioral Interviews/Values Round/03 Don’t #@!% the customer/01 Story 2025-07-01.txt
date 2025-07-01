@@ -1,0 +1,31 @@
+ Improving Preferred Day Delivery Experience
+Question: How is your mentality user-centred? What trade-offs did you make to put the customer first?
+
+Situation:
+
+I was working on a Walmart Day feature, where customers could choose to have their order delivered on a specific day of the week. 
+The initial design used a thread pool executor, and the preferred day feasibility calculation involved complex logic to check delivery options for every day of the week.
+
+Task:
+
+To keep response times within SLA, we were using future.get(200ms) to limit how long the computation could take. 
+However, because the logic was computationally intensive, especially for larger carts with multiple items, the computation often timed out. 
+As a result, the feature didn’t surface reliably to customers—Splunk metrics showed only a ~33% surface rate on the cart page.
+
+Action:
+
+I recognized this was leading to a poor customer experience—many shoppers simply weren’t even offered the option.
+I consulted with my architect and proposed leveraging a data cache to avoid recomputing feasibility for every request. 
+This required designing a producer-consumer system to precompute and store preferred day options efficiently.
+I took ownership of writing the producer and consumer logic and integrating the changes into the application code.
+I also coordinated with QA to perform end-to-end and edge-case testing to ensure the feature worked reliably for all cart sizes.
+
+Result:
+
+Once we deployed this solution to production, the surface rate improved dramatically—from ~33% to ~77%. 
+This meant a much larger proportion of customers could actually see and use the feature without experiencing delays or timeouts.
+
+Learning:
+
+Through this experience, I learned that putting the customer first often requires challenging existing technical approaches and proactively identifying bottlenecks that degrade user experience. 
+Even when something is technically “working,” if it’s unreliable for the customer, it’s worth taking the extra effort to re-architect and deliver a solution that feels seamless to them.
