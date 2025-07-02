@@ -1,0 +1,52 @@
+S – Situation
+In Walmart, our team was maintaining a configuration that determines how many Ship From Store (SFS) network stores to consider
+for order eligibility. Due to the SFS network winding down, we reduced this configuration value drastically—from 4000 stores to 10.
+
+Shortly after, the eligibility service—which tags items as eligible for delivery from specific FCs or stores—started 
+experiencing high response time spikes. An incident was raised, and leadership, including multiple teams, was on the call to investigate.
+
+T – Task
+I needed to:
+
+Help identify whether our configuration change was the root cause of the latency.
+
+Communicate our findings transparently to leadership.
+
+Collaborate with other teams under pressure to get to the bottom of the issue quickly.
+
+A – Action
+First, I reviewed our change logs and code to validate that reducing the store count should not have caused such a large performance impact.
+
+Second, while the root cause deep dive was underway, I looked at related metrics. I noticed that item page traffic and search/browse page 
+traffic dropped significantly at the exact same time our change was implemented.
+
+Third, I escalated this observation to our leadership on the call immediately, instead of waiting for formal RCA. 
+This helped get the Item Page teams paged.
+
+Fourth, when the Item Page teams investigated, they confirmed that their upstream service, called LIMO, was also impacted.
+
+Finally, in collaboration with LIMO’s leadership, we discovered that they had independently reduced their own SFS network size 
+(from 4000 to 90). Their API had a logic that when the store evaluation count fell below 100, it would trigger an expensive operation 
+evaluating all nodes, leading to timeouts.
+
+I communicated all these details transparently, and clarified that the performance degradation was ultimately caused by the 
+LIMO service behavior, not our configuration change.
+
+R – Result
+The issue was quickly isolated and resolved because of proactive communication and cross-team collaboration.
+
+Our team was not held responsible for the incident.
+
+Leadership appreciated that I stayed calm, focused on data, and shared observations without blame.
+
+As a learning, I reinforced the importance of openly sharing even partial findings early in a crisis to accelerate root cause discovery.
+
+💡 Learning
+From this experience, I learned that:
+
+Transparent communication, even when you are not certain, helps teams converge on the truth faster.
+
+Staying objective and data-driven in a high-pressure situation avoids unnecessary conflict.
+
+Adapting my communication style—raising hypotheses clearly and involving the right stakeholders—can turn a
+potentially negative situation into a constructive one.
