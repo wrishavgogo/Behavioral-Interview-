@@ -51,8 +51,18 @@ what are your achievements and some of the things you are really proud of ?
 *********************
 
 
-
+Question) 
 what are some improvement areas that you can do to be a better software engineer
+
+Answer) 
+Sample Answer #5 (Time Management)
+I’m also focusing on improving how I prioritize tasks and manage time, especially when juggling multiple high-priority projects. Sometimes I get too deep into optimizing one area and need to step back to look at the bigger picture. I’m practicing better planning and time-boxing to stay balanced.
+
+Sample Answer #4 (Mentorship / Leadership)
+I’d like to get better at mentoring junior engineers. I’m experienced in solving problems myself, but I’m working on developing the patience and coaching skills to help others grow and contribute more effectively.
+
+Sample Answer #1 (Technical Depth)
+One improvement area I’m actively working on is deepening my understanding of system design and distributed systems at scale. I’m comfortable building features and maintaining services, but I want to improve my ability to architect resilient systems end-to-end, especially for high-throughput, low-latency scenarios. I’ve started taking courses and reading books like Designing Data-Intensive Applications to build this skill further.
 
 
 *********************
