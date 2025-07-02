@@ -1,0 +1,67 @@
+Communication  Style -> Openness ,
+
+build some rapport , dont directly expect to jump into questions
+
+
+
+HM round :-
+
+
+****************
+
+
+what was the motivation behind the project
+the challenges that you faced
+how you resolved it
+what was the learning from it
+
+
+*******************
+
+
+See projects in depth
+
+
+********************
+
+situation based question :-
+
+2 people including you are working
+one is working on the frontend and you are working on the backend ,
+but the other guy wants to work on the backend , how would you resolve this
+
+*****************
+
+checking collaboration experience
+
+*****************
+
+asking failure scenarios
+
+*********************
+
+How do you deal with things when you are incorrect ?
+
+Times when you had differring opinions and how did you put your point forward ?
+
+what are your achievements and some of the things you are really proud of ?
+
+
+
+*********************
+
+
+
+what are some improvement areas that you can do to be a better software engineer
+
+
+*********************
+
+How do i resolve the conflicts between me , my manager and my team leader ?
+
+*********************
+
+How do i make sure that am making the overall environment of the team as good as possible
+
+Am i a team player or not
+
