@@ -1,0 +1,51 @@
+Build with heart and balance, because it shows:
+✅ You were committed to solving a problem that mattered (improving EDD errors).
+✅ Even though your first attempt didn’t work as intended, you were transparent, analytical, and solution-focused, not defensive.
+✅ You engaged leadership for a better approach.
+
+Below is a polished STAR response you can deliver confidently, plus a natural Learning statement you can use:
+
+⭐ Story: Learning from a Multihop Implementation That Didn’t Meet Expectations
+Question: Tell me about a time when you or the team missed the mark. How did you react? How did you approach fixing things?
+
+Situation:
+
+We needed to enable multihop shipments in the Promise service to improve estimated delivery date (EDD) accuracy. 
+The feature was already live in sourcing, but Promise needed to support it end-to-end to meet agreed-upon EDD error targets.
+I was tasked with estimating the effort and implementing the change.
+
+Task:
+
+I estimated about 1.5 months of work, mainly involving conditional logic changes to support multihop flows in both the Search & Browse 
+page repo and other related repos. My plan included 4 weeks of development and 2 weeks for e2e testing.
+
+Action:
+
+I finished the changes within the estimated timeline. However, when the feature went live in production, we started seeing a rise 
+in SLA latency on the Search & Browse pages because of the additional multihop computation logic. After discussing this with my lead,
+we decided to turn off multihop only on Search & Browse pages to reduce latency but leave it live on the item and cart pages.
+
+Result:
+
+Unfortunately, this created inconsistency across the customer experience: the impression page sometimes showed a 2-day delivery,
+while the cart page showed 1-day delivery. This confused users and led to more issues. Ultimately, we had to disable the feature 
+entirely and communicate the rollback to leadership.
+After this, I prepared a detailed case study explaining why the implementation caused latency, and proposed ways to simplify
+the approach. Leadership suggested precomputing solutions and using MemcachedD to avoid recomputation.
+I did a deep dive into the new worker/master repo setup to understand how precompute could work and prepared for a more scalable re-implementation.
+
+Learning:
+
+This experience taught me that even when you deliver something on time, it’s equally important to anticipate and 
+stress-test for scalability impacts—especially when adding complex logic to high-traffic paths. 
+I also learned that when things don’t go as planned, the best approach is to be transparent, own the outcome, 
+and proactively engage stakeholders to co-create a better long-term solution.
+
+✅ Why this is a good learning statement:
+
+It shows maturity and ownership.
+
+You didn’t blame circumstances.
+
+You highlight the importance of proactively stress-testing and staying solution-focused.
+
