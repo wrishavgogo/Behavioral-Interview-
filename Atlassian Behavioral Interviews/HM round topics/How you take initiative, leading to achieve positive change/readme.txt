@@ -8,5 +8,7 @@ You drive action that improves the team, product, or process. ---> creating debu
 
 Your initiative results in something positive (faster delivery, better quality, happier customers, less risk, cost savings, etc.).
 
+edd errors of 1 day metrics error rate increase 
+
 change in schema for transit time -> memcached 
 parallel simulation in mobius to deliver and test parallely . -> faster delivery , happier customers , 
